@@ -1,0 +1,31 @@
+<app-data-viewer-loader [loading]="loading$" [detail]="detail$">
+    <app-card>
+        <div class="card-title">
+            <i class="fa-solid fa-id-card"></i>
+            {{'page.profile-detail.title.identity' | translate}}
+        </div>
+        <div class="content" *ngIf="detailFormConfig">
+            <div class="line">
+                <app-input-detail [config]="detailFormConfig.firstname"></app-input-detail>
+                <app-input-detail [config]="detailFormConfig.lastname"></app-input-detail>
+                <app-input-detail [config]="detailFormConfig.gender"></app-input-detail>
+            </div>
+            <div class="line">
+                <app-input-detail [config]="detailFormConfig.email"></app-input-detail>
+                <app-input-detail [config]="detailFormConfig.phone"></app-input-detail>
+                <div class="button-area">
+                    <ng-container *ngIf="needToSave$ | async; else noNeed">
+                        <span class="clickable primary-btn" (click)="save()"><i
+                                class="fa-regular fa-floppy-disk"></i></span>
+                    </ng-container>
+                    <ng-template #noNeed>
+                        <span class="un-clickable"><i class="fa-regular fa-floppy-disk"
+                                                      [tooltip]="{label:'common.no-change-to-save'}"></i></span>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </app-card>
+    <app-address-detail *ngIf="detail$ | async as detail" [address]="detail?.address"
+                        [formConfig]="detailFormConfig?.address"></app-address-detail>
+</app-data-viewer-loader>

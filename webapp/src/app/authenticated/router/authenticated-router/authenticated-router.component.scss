@@ -1,0 +1,137 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height:100vh;
+  min-height: 100vh;
+  width: 100%;
+}
+  .logo{
+    height: var(--var-header-height);
+    img{
+      height:100%;
+    }
+  }
+  .menu-btn {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "FigtreeSemiBold";
+    text-transform: uppercase;
+    color: var(--theme-white);
+    width: var(--var-side-menu-full-open);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+    border-left: 1px solid var(--theme-blue-dark);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--theme-blue-clear);
+    }
+
+    span {
+      height: var(--var-header-height);
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .square {
+      width: var(--var-header-height);
+      min-width: var(--var-header-height);
+      height: var(--var-header-height);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+  }
+
+  .minimal {
+    width: var(--var-header-height);
+  }
+
+
+/* Nav design ----------------------------------------*/
+nav {
+  ul {
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      text-transform: uppercase;
+      color: var(--theme-dark-bg-pan);
+      width: var(--var-side-menu-full-open);
+      transition: var(--transition-smooth);
+      overflow: hidden;
+      cursor: pointer;
+
+      .icon {
+        width: var(--var-header-height);
+        min-width: var(--var-header-height);
+        height: var(--var-header-height);
+        color: var(--theme-dark-bg-pan);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .label {
+        font-size: 15px;
+      }
+
+      &:hover {
+        background: var(--theme-standard-bg-hover);
+      }
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--var-header-height);
+  background: var(--theme-blue-darker);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.nav-full {
+  width: var(--var-side-menu-full-open);
+  transition: var(--transition-smooth);
+}
+
+/* Main content design ------------------------------*/
+.main-content {
+  padding-left: var(--var-header-height);
+  flex: 2;
+}
+
+.open-main-content {
+  padding-left: var(--var-side-menu-full-open);
+  transition: var(--transition-smooth);
+
+}
+
+/* footer design ------------------------------------*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem;
+  height: 80px;
+  background: var(--theme-white);
+  color: #6e6e73;
+  font-size: 13px;
+}
